@@ -32,3 +32,5 @@ SELECT p.nombre, p.precio FROM producto p JOIN fabricante f ON p.codigo_fabrican
 SELECT p.nombre, p.precio, f.nombre FROM producto p JOIN fabricante f ON p.codigo_fabricante = f.codigo WHERE p.precio >= 180 ORDER BY p.precio DESC, p.nombre ASC;
 SELECT DISTINCT f.codigo, f.nombre FROM producto p JOIN fabricante f ON p.codigo_fabricante = f.codigo;
 SELECT f.nombre, COUNT(p.codigo) AS cantidad_productos FROM fabricante f LEFT JOIN producto p ON f.codigo = p.codigo_fabricante GROUP BY f.nombre;
+SELECT f.nombre AS nombre_fabricante FROM fabricante f LEFT JOIN producto p ON f.codigo = p.codigo_fabricante WHERE p.codigo IS NULL;
+SELECT nombre FROM producto WHERE codigo_fabricante = 2;
